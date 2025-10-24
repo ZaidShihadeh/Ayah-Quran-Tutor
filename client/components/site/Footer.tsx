@@ -9,7 +9,7 @@ export default function Footer() {
   const waLink = contacts.whatsapp
     ? contacts.whatsapp.startsWith("http")
       ? contacts.whatsapp
-      : `https://wa.me/${contacts.whatsapp.replace(/[^\\d]/g, "")}`
+      : `https://wa.me/${contacts.whatsapp.replace(/[^\d]/g, "")}`
     : "";
 
   return (
@@ -62,6 +62,7 @@ export default function Footer() {
                     <a
                       href={socials.instagram}
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="hover:text-white flex items-center gap-2"
                     >
                       <Instagram size={16} /> Instagram
@@ -73,6 +74,7 @@ export default function Footer() {
                     <a
                       href={socials.linkedin}
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="hover:text-white flex items-center gap-2"
                     >
                       <Linkedin size={16} /> LinkedIn
