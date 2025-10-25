@@ -1,13 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { BookOpen, Headphones, Star, Users, Sparkles, ArrowUp, Zap } from "lucide-react";
+import { BookOpen, Headphones, Star, Users, Sparkles, ArrowUp } from "lucide-react";
 
 import { useLanguage } from "@/context/LanguageContext";
 import React from "react";
 import { siteConfig } from "@/siteConfig";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
-import { useNavigate } from "react-router-dom";
-import { useCart } from "@/context/CartContext";
 
 export default function Index() {
   const { lang } = useLanguage();
@@ -148,7 +146,7 @@ export default function Index() {
               <p className="text-slate-700 mt-4 text-sm md:text-base leading-relaxed">
                 {t(
                   "Provide interactive Qur'an classes for Arabic-speaking children ages 6–12 and girls 12+, where learning is filled with care, joy, and purpose. We focus on correct recitation, understanding the meanings and stories of the Qur'an, and connecting its lessons to daily life. Led by an experienced and compassionate teacher, our goal is to make every class a place where the Qur'an becomes a beloved companion and source of comfort for each child.",
-                  "توفير حصص قرآنية تفاعلية ل��أطفال الناطقين بالعربية من 6-12 سنة والفتيات 12+، حيث يكون التعلم مليئاً بالع��اية والفرح والهدف. نركز على التلاوة الصحيحة وفهم معاني وقصص القرآن الكريم، وربط دروسه بحياتنا اليومية. بقيادة معلمة ذات خبرة وعطف، هدفنا هو جعل كل حصة مكاناً يصبح فيه القرآن الكريم رفيقاً محبوباً ومصدر راحة لكل طفل."
+                  "توفير حصص قرآنية تفاعلية للأطفال الناطقين بالعربية من 6-12 سنة والفتيات 12+، حيث يكون التعلم مليئاً بالعناية والفرح والهدف. نركز على التلاوة الصحيحة وفهم معاني وقصص القرآن الكريم، وربط دروسه بحياتنا اليومية. بقيادة معلمة ذات خبرة وعطف، هدفنا هو جعل كل حصة مكاناً يصبح فيه القرآن الكريم رفيقاً محبوباً ومصدر راحة لكل طفل."
                 )}
               </p>
             </div>
@@ -169,12 +167,12 @@ export default function Index() {
           <Card
             icon={<BookOpen className="text-brand-cyan" />}
             title="Students' Materials"
-            arTitle="موا�� الطالب"
+            arTitle="مواد الطالب"
             index={0}
           >
             {t(
               "Every child learns differently. That's why we designed lessons based on your child's pace, strengths, and needs. All students receive the same high-quality materials created by us, but lessons are personalized.",
-              "كل ��فل يتعلم بطريقة مختلفة. لذلك صممنا دروساً بناءً على وتيرة طفلك وقوته واحتياجاته. يحصل جم��ع الطلاب على نفس المواد عالية الجودة التي أنشأناها، لكن الدروس مخصصة."
+              "كل طفل يتعلم بطريقة مختلفة. لذلك صممنا دروساً بناءً على وتيرة طفلك وقوته واحتياجاته. يحصل جميع الطلاب على نفس المواد عالية الجودة التي أنشأناها، لكن الدروس مخصصة."
             )}
           </Card>
           <Card
@@ -185,7 +183,7 @@ export default function Index() {
           >
             {t(
               "We offer personalized Qur'an lessons that help each child learn at their own pace while planting a deep love for the Qur'an through recitation, meanings, and stories.",
-              "نقدم ��روساً قرآنية مخصصة تساعد كل طفل على التعلم بالسرعة التي تناسبه مع غرس حب عميق للقرآن الكريم من خلال التلاوة والمعاني والقصص."
+              "نقدم دروساً قرآنية مخصصة تساعد كل طفل على التعلم بالسرعة التي تناسبه مع غرس حب عميق للقرآن الكريم من خلال التلاوة والمعاني والقصص."
             )}
           </Card>
           <Card
@@ -199,27 +197,6 @@ export default function Index() {
               "مواد خاصة عبر الإنترنت أعددناها خصيصاً لطلابنا."
             )}
           </Card>
-        </div>
-      </section>
-
-      {/* Lessons Section */}
-      <section id="lessons" className="bg-gradient-to-b from-slate-50 to-white py-20 md:py-32 px-4 md:px-0">
-        <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row items-start md:items-baseline justify-between gap-4 md:gap-6 mb-12 md:mb-16">
-            <div>
-              <h2 className="text-3xl md:text-5xl font-black uppercase text-shadow-sm">
-                {t("Premium Lessons", "الدروس المتميزة")}
-              </h2>
-              <p className="text-slate-600 mt-2 text-sm md:text-base">
-                {t("Purchase and access complete lesson materials", "اشترِ وصولاً كاملاً للمواد ��لدراسية")}
-              </p>
-            </div>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-            {siteConfig.lessons.map((lesson, index) => (
-              <LessonCard key={lesson.id} lesson={lesson} index={index} />
-            ))}
-          </div>
         </div>
       </section>
 
@@ -315,74 +292,6 @@ function Card({
         </div>
       </div>
       <p className="mt-4 text-slate-700 text-sm md:text-base leading-relaxed">{children}</p>
-    </div>
-  );
-}
-
-function LessonCard({ lesson, index = 0 }: { lesson: (typeof siteConfig.lessons)[0]; index?: number }) {
-  const ref = useIntersectionObserver<HTMLDivElement>();
-  const navigate = useNavigate();
-  const { addItem } = useCart();
-  const { lang } = useLanguage();
-  const t = (en: string, ar: string) => (lang === "ar" ? ar : en);
-
-  const staggerClass = [
-    "stagger-1",
-    "stagger-2",
-    "stagger-3",
-    "stagger-4",
-    "stagger-5",
-  ][index] || "stagger-1";
-
-  const handlePayNow = () => {
-    addItem({
-      id: lesson.id,
-      name: lang === "ar" ? lesson.titleAr : lesson.titleEn,
-      price: lesson.price,
-      quantity: 1,
-      type: "lesson",
-    });
-    navigate("/checkout");
-  };
-
-  return (
-    <div
-      ref={ref}
-      className={`rounded-3xl border border-slate-200 p-6 md:p-8 bg-white shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-105 hover:border-brand-purple/50 animate-slide-in-up ${staggerClass}`}
-    >
-      <div className="flex items-start gap-3 mb-4">
-        <div className="h-12 w-12 rounded-2xl bg-brand-cyan/10 grid place-items-center flex-shrink-0">
-          <Zap className="text-brand-cyan" size={24} />
-        </div>
-        <div className="min-w-0 flex-1">
-          <h3 className="text-lg md:text-xl font-extrabold text-shadow">{lang === "ar" ? lesson.titleAr : lesson.titleEn}</h3>
-          {lesson.level && (
-            <p className="text-xs md:text-sm text-slate-500 mt-1">{lesson.level}</p>
-          )}
-        </div>
-      </div>
-
-      <p className="text-slate-700 text-sm md:text-base leading-relaxed mb-4">
-        {lang === "ar" ? lesson.descriptionAr : lesson.descriptionEn}
-      </p>
-
-      {lesson.duration && (
-        <p className="text-xs md:text-sm text-slate-600 mb-4">
-          <span className="font-semibold">{t("Duration", "المدة")}:</span> {lesson.duration}
-        </p>
-      )}
-
-      <div className="flex items-baseline gap-2 mb-6">
-        <span className="text-3xl md:text-4xl font-black text-brand-purple">${lesson.price}</span>
-        <span className="text-slate-600 text-sm">{t("USD", "دولار أمريكي")}</span>
-      </div>
-
-      <Button
-        onClick={handlePayNow}
-        className="w-full rounded-full bg-brand-cyan text-white hover:bg-brand-cyan/90 px-6 py-3 h-auto transition-all duration-300 hover:scale-105 hover:shadow-lg uppercase tracking-wider font-extrabold"
-      >
-        {t("Pay Now", "ادفع الآن")}
-      </Button>
     </div>
   );
 }
