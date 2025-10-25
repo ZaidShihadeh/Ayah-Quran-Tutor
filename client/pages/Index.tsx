@@ -202,27 +202,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Lessons Section */}
-      <section id="lessons" className="bg-gradient-to-b from-slate-50 to-white py-20 md:py-32 px-4 md:px-0">
-        <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row items-start md:items-baseline justify-between gap-4 md:gap-6 mb-12 md:mb-16">
-            <div>
-              <h2 className="text-3xl md:text-5xl font-black uppercase text-shadow-sm">
-                {t("Premium Lessons", "الدروس المتميزة")}
-              </h2>
-              <p className="text-slate-600 mt-2 text-sm md:text-base">
-                {t("Purchase and access complete lesson materials", "اشترِ وصولاً كاملاً للمواد ��لدراسية")}
-              </p>
-            </div>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-            {siteConfig.lessons.map((lesson, index) => (
-              <LessonCard key={lesson.id} lesson={lesson} index={index} />
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Materials (feature-flagged) */}
       {siteConfig.features?.showMaterials && (
         <section id="materials" className="container mx-auto py-20 md:py-32 px-4 md:px-0">
