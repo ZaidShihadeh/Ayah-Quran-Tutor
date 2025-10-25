@@ -60,7 +60,7 @@ export default function Login() {
         localStorage.setItem("userEmail", email);
         toast({
           title: t("Success!", "نجح!"),
-          description: t("You have been logged in successfully", "تم تس��يل دخولك بنجاح"),
+          description: t("You have been logged in successfully", "تم تسجيل دخولك بنجاح"),
         });
         navigate(location.state?.from?.pathname || "/");
       }

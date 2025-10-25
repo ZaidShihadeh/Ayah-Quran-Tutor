@@ -146,7 +146,7 @@ export default function Index() {
               <p className="text-slate-700 mt-4 text-sm md:text-base leading-relaxed">
                 {t(
                   "Provide interactive Qur'an classes for Arabic-speaking children ages 6–12 and girls 12+, where learning is filled with care, joy, and purpose. We focus on correct recitation, understanding the meanings and stories of the Qur'an, and connecting its lessons to daily life. Led by an experienced and compassionate teacher, our goal is to make every class a place where the Qur'an becomes a beloved companion and source of comfort for each child.",
-                  "توفير حصص قرآنية تفاعلية ل��أطفال الناطقين بالعربية من 6-12 سنة والفتيات 12+، حيث يكون التعلم مليئاً بالع��اية والفرح والهدف. نركز على التلاوة الصحيحة وفهم معاني وقصص القرآن الكريم، وربط دروسه بحياتنا اليومية. بقيادة معلمة ذات خبرة وعطف، هدفنا هو جعل كل حصة مكاناً يصبح فيه القرآن الكريم رفيقاً محبوباً ومصدر راحة لكل طفل."
+                  "توفير حصص قرآن��ة تفاعلية للأطفال الناطقين بالعربية من 6-12 سنة والفتيات 12+، حيث يكون التعلم مليئاً بالعناية والفرح والهدف. نركز على التلاوة الصحيحة وفهم معاني وقصص القرآن الكريم، وربط دروسه بحياتنا اليومية. بقيادة معلمة ذات خبرة وعطف، هدفنا هو جعل كل حصة مكاناً يصبح فيه القرآن الكريم رفيقاً محبوباً ومصدر راحة لكل طفل."
                 )}
               </p>
             </div>
