@@ -196,7 +196,7 @@ export default function Index() {
           >
             {t(
               "Special online materials we have prepared especially for our students.",
-              "مواد خاصة عبر الإنترنت أعددناها خصيصاً لطلابنا."
+              "مواد خاصة ع��ر الإنترنت أعددناها خصيصاً لطلابنا."
             )}
           </Card>
         </div>
@@ -294,74 +294,6 @@ function Card({
         </div>
       </div>
       <p className="mt-4 text-slate-700 text-sm md:text-base leading-relaxed">{children}</p>
-    </div>
-  );
-}
-
-function LessonCard({ lesson, index = 0 }: { lesson: (typeof siteConfig.lessons)[0]; index?: number }) {
-  const ref = useIntersectionObserver<HTMLDivElement>();
-  const navigate = useNavigate();
-  const { addItem } = useCart();
-  const { lang } = useLanguage();
-  const t = (en: string, ar: string) => (lang === "ar" ? ar : en);
-
-  const staggerClass = [
-    "stagger-1",
-    "stagger-2",
-    "stagger-3",
-    "stagger-4",
-    "stagger-5",
-  ][index] || "stagger-1";
-
-  const handlePayNow = () => {
-    addItem({
-      id: lesson.id,
-      name: lang === "ar" ? lesson.titleAr : lesson.titleEn,
-      price: lesson.price,
-      quantity: 1,
-      type: "lesson",
-    });
-    navigate("/checkout");
-  };
-
-  return (
-    <div
-      ref={ref}
-      className={`rounded-3xl border border-slate-200 p-6 md:p-8 bg-white shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-105 hover:border-brand-purple/50 animate-slide-in-up ${staggerClass}`}
-    >
-      <div className="flex items-start gap-3 mb-4">
-        <div className="h-12 w-12 rounded-2xl bg-brand-cyan/10 grid place-items-center flex-shrink-0">
-          <Zap className="text-brand-cyan" size={24} />
-        </div>
-        <div className="min-w-0 flex-1">
-          <h3 className="text-lg md:text-xl font-extrabold text-shadow">{lang === "ar" ? lesson.titleAr : lesson.titleEn}</h3>
-          {lesson.level && (
-            <p className="text-xs md:text-sm text-slate-500 mt-1">{lesson.level}</p>
-          )}
-        </div>
-      </div>
-
-      <p className="text-slate-700 text-sm md:text-base leading-relaxed mb-4">
-        {lang === "ar" ? lesson.descriptionAr : lesson.descriptionEn}
-      </p>
-
-      {lesson.duration && (
-        <p className="text-xs md:text-sm text-slate-600 mb-4">
-          <span className="font-semibold">{t("Duration", "المدة")}:</span> {lesson.duration}
-        </p>
-      )}
-
-      <div className="flex items-baseline gap-2 mb-6">
-        <span className="text-3xl md:text-4xl font-black text-brand-purple">${lesson.price}</span>
-        <span className="text-slate-600 text-sm">{t("USD", "دولار أمريكي")}</span>
-      </div>
-
-      <Button
-        onClick={handlePayNow}
-        className="w-full rounded-full bg-brand-cyan text-white hover:bg-brand-cyan/90 px-6 py-3 h-auto transition-all duration-300 hover:scale-105 hover:shadow-lg uppercase tracking-wider font-extrabold"
-      >
-        {t("Pay Now", "ادفع الآن")}
-      </Button>
     </div>
   );
 }
