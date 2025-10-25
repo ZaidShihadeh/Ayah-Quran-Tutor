@@ -167,12 +167,12 @@ export default function Index() {
           <Card
             icon={<BookOpen className="text-brand-cyan" />}
             title="Students' Materials"
-            arTitle="موا�� الطالب"
+            arTitle="مواد الطالب"
             index={0}
           >
             {t(
               "Every child learns differently. That's why we designed lessons based on your child's pace, strengths, and needs. All students receive the same high-quality materials created by us, but lessons are personalized.",
-              "كل ��فل يتعلم بطريقة مختلفة. لذلك صممنا دروساً بناءً على وتيرة طفلك وقوته واحتياجاته. يحصل جم��ع الطلاب على نفس المواد عالية الجودة التي أنشأناها، لكن الدروس مخصصة."
+              "كل طفل يتعلم بطريقة مختلفة. لذلك صممنا دروساً بناءً على وتيرة طفلك وقوته واحتياجاته. يحصل جميع الطلاب على نفس المواد عالية الجودة التي أنشأناها، لكن الدروس مخصصة."
             )}
           </Card>
           <Card
@@ -183,7 +183,7 @@ export default function Index() {
           >
             {t(
               "We offer personalized Qur'an lessons that help each child learn at their own pace while planting a deep love for the Qur'an through recitation, meanings, and stories.",
-              "نقدم ��روساً قرآنية مخصصة تساعد كل طفل على التعلم بالسرعة التي تناسبه مع غرس حب عميق للقرآن الكريم من خلال التلاوة والمعاني والقصص."
+              "نقدم دروساً قرآنية مخصصة تساعد كل طفل على التعلم بالسرعة التي تناسبه مع غرس حب عميق للقرآن الكريم من خلال التلاوة والمعاني والقصص."
             )}
           </Card>
           <Card
@@ -194,7 +194,7 @@ export default function Index() {
           >
             {t(
               "Special online materials we have prepared especially for our students.",
-              "مواد خاصة ع��ر الإنترنت أعددناها خصيصاً لطلابنا."
+              "مواد خاصة عبر الإنترنت أعددناها خصيصاً لطلابنا."
             )}
           </Card>
         </div>
