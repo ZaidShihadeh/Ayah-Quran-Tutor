@@ -1,13 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { BookOpen, Headphones, Star, Users, Sparkles, ArrowUp, Zap } from "lucide-react";
+import { BookOpen, Headphones, Star, Users, Sparkles, ArrowUp } from "lucide-react";
 
 import { useLanguage } from "@/context/LanguageContext";
 import React from "react";
 import { siteConfig } from "@/siteConfig";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
-import { useNavigate } from "react-router-dom";
-import { useCart } from "@/context/CartContext";
 
 export default function Index() {
   const { lang } = useLanguage();
