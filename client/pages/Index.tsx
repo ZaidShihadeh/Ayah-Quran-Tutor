@@ -194,7 +194,7 @@ export default function Index() {
           >
             {t(
               "Special online materials we have prepared especially for our students.",
-              "مواد خاصة عبر الإنترنت أعددناها خصيصاً لطل��بنا."
+              "مواد خاصة عبر الإنترنت أعددناها خصيصاً لطلابنا."
             )}
           </Card>
         </div>
